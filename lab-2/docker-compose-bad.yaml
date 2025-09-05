@@ -4,26 +4,26 @@ version: "3.9"
 
 services:
   web:
-    image: nginx:latest             # BAD: плавающий тег latest
-    container_name: web             # BAD: фиксированное имя мешает масштабированию/CI
-    user: root                      # BAD: запускаем под root
-    privileged: true                # BAD: лишние привилегии
-    network_mode: host              # BAD: ломаем сетевую изоляцию
+    image: nginx:latest             
+    container_name: web             
+    user: root                      
+    privileged: true                
+    network_mode: host              
     ports:
-      - "80:80"                     # (в host-сети маппинг бессмысленен — путаница)
+      - "80:80"                     
     volumes:
-      - ./:/usr/share/nginx/html    # BAD: маунтим весь проект внутрь контейнера
+      - ./:/usr/share/nginx/html    
     depends_on:
       - cache
 
   cache:
-    image: redis:latest             # BAD: снова latest
+    image: redis:latest            
     container_name: redis
     environment:
-      REDIS_PASSWORD: supersecret   # BAD: секреты в окружении
-    command: ["redis-server","--appendonly","yes","--requirepass","supersecret"]  # BAD: секрет в командной строке
+      REDIS_PASSWORD: supersecret   
+    command: ["redis-server","--appendonly","yes","--requirepass","supersecret"] 
     ports:
-      - "6379:6379"                 # BAD: публикуем внутренний сервис наружу
+      - "6379:6379"                 
     volumes:
       - ./data:/data
-    restart: always                 # Может маскировать реальные проблемы
+    restart: always                
