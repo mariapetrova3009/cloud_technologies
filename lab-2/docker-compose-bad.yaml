@@ -1,0 +1,29 @@
+# плохой compose для web (nginx) + redis
+
+version: "3.9"
+
+services:
+  web:
+    image: nginx:latest             # BAD: плавающий тег latest
+    container_name: web             # BAD: фиксированное имя мешает масштабированию/CI
+    user: root                      # BAD: запускаем под root
+    privileged: true                # BAD: лишние привилегии
+    network_mode: host              # BAD: ломаем сетевую изоляцию
+    ports:
+      - "80:80"                     # (в host-сети маппинг бессмысленен — путаница)
+    volumes:
+      - ./:/usr/share/nginx/html    # BAD: маунтим весь проект внутрь контейнера
+    depends_on:
+      - cache
+
+  cache:
+    image: redis:latest             # BAD: снова latest
+    container_name: redis
+    environment:
+      REDIS_PASSWORD: supersecret   # BAD: секреты в окружении
+    command: ["redis-server","--appendonly","yes","--requirepass","supersecret"]  # BAD: секрет в командной строке
+    ports:
+      - "6379:6379"                 # BAD: публикуем внутренний сервис наружу
+    volumes:
+      - ./data:/data
+    restart: always                 # Может маскировать реальные проблемы

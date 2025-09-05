@@ -1,0 +1,31 @@
+version: "3.9"
+
+services:
+  web:
+    image: nginx:1.25-alpine
+    ports:
+      - "8080:80"                            # web доступен с хоста
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./html:/usr/share/nginx/html:ro
+    networks:
+      - web-net                               # <-- только своя сеть
+
+  cache:
+    image: redis:7.2-alpine
+    command: ["redis-server","--appendonly","yes"]
+    volumes:
+      - redis-data:/data
+    networks:
+      - cache-net                             # <-- другая сеть
+    # никаких ports: Redis не публикуем наружу
+
+volumes:
+  redis-data:
+
+networks:
+  web-net:                                    # обычная bridge-сеть
+    driver: bridge
+  cache-net:                                  # изолированная сеть
+    driver: bridge
+    internal: true                            # контейнеры в этой сети не имеют маршрута наружу
