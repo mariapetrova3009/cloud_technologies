@@ -79,7 +79,7 @@
        sendfile        on;
        keepalive_timeout  65;
        
-       # Подключаем виртуальные хосты (пункт 4 ТЗ)
+       # Подключаем виртуальные хосты 
        include servers/*;
    }
    EOF
