@@ -29,9 +29,9 @@
 3) создаем html файлы для 2х проектов
    ```
     echo '<h1>Project 1 - Hello World!</h1>' > /usr/local/var/www/project1/html/page1.html
-    echo '<h1>Project 1 - Page2</h1>' > /usr/local/var/www/project1/html/page2.html
+    echo '<h1>Project 1 - Page2</h1>' > /usr/local/var/www/project1/html/api.html
     echo '<h1>Project 2 - Hello again!</h1>' > /usr/local/var/www/project2/html/page1.html
-    echo '<h1>Project 2 - Page2</h1>' > /usr/local/var/www/project2/html/page2.html
+    echo '<h1>Project 2 - Page2</h1>' > /usr/local/var/www/project2/html/admin.html
    ```
 
 ### Основная часть:
@@ -61,5 +61,46 @@
    ```
    mkdir -p /opt/homebrew/etc/nginx/servers
    ```
-4) пишем конфигурации для [проекта 1](project1/nginx.conf) и [проекта 2](project2/nginx.conf)
-    
+4) пишем конфигурации для [проекта 1](projects/project1/nginx.conf) и [проекта 2](projects/project2/nginx.conf)
+
+5) настраиваем основной конфиг:
+   ```
+   cat > /opt/homebrew/etc/nginx/nginx.conf << 'EOF'
+   worker_processes  1;
+   
+   events {
+       worker_connections  1024;
+   }
+   
+   http {
+       include       mime.types;
+       default_type  application/octet-stream;
+       
+       sendfile        on;
+       keepalive_timeout  65;
+       
+       # Подключаем виртуальные хосты (пункт 4 ТЗ)
+       include servers/*;
+   }
+   EOF
+   ```
+
+### Проверка
+
+1) проверяем редирект http -> https:
+   
+   <img width="439" height="118" alt="Снимок экрана 2025-09-08 в 15 24 13" src="https://github.com/user-attachments/assets/4800e674-fb08-415d-9911-f8a136f98543" />
+
+2) проверка https с самоподписными сертификатами:
+   
+    <img width="439" height="39" alt="Снимок экрана 2025-09-08 в 15 25 10" src="https://github.com/user-attachments/assets/487cc778-fdfd-4f44-bb0e-e136119efdf5" />
+
+3) проверяем работу alias
+   
+<img width="467" height="39" alt="Снимок экрана 2025-09-08 в 15 29 41" src="https://github.com/user-attachments/assets/c1311f41-a94c-43cc-a33d-2b97c3d953c9" />
+
+<img width="489" height="39" alt="Снимок экрана 2025-09-08 в 15 31 20" src="https://github.com/user-attachments/assets/01bff251-4d29-419b-b633-60a51ce5f699" />
+
+4) проверка виртуальных хостов
+   
+<img width="489" height="64" alt="Снимок экрана 2025-09-08 в 15 33 19" src="https://github.com/user-attachments/assets/9b98ac1f-3ef8-4766-a446-77eaa397b65d" />
