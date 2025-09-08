@@ -97,10 +97,12 @@
 
 3) проверяем работу alias
    
-<img width="467" height="39" alt="Снимок экрана 2025-09-08 в 15 29 41" src="https://github.com/user-attachments/assets/c1311f41-a94c-43cc-a33d-2b97c3d953c9" />
+   <img width="467" height="39" alt="Снимок экрана 2025-09-08 в 15 29 41" src="https://github.com/user-attachments/assets/c1311f41-a94c-43cc-a33d-2b97c3d953c9" />
 
-<img width="489" height="39" alt="Снимок экрана 2025-09-08 в 15 31 20" src="https://github.com/user-attachments/assets/01bff251-4d29-419b-b633-60a51ce5f699" />
+   
+
+   <img width="489" height="39" alt="Снимок экрана 2025-09-08 в 15 31 20" src="https://github.com/user-attachments/assets/01bff251-4d29-419b-b633-60a51ce5f699" />
 
 4) проверка виртуальных хостов
    
-<img width="489" height="64" alt="Снимок экрана 2025-09-08 в 15 33 19" src="https://github.com/user-attachments/assets/9b98ac1f-3ef8-4766-a446-77eaa397b65d" />
+   <img width="489" height="64" alt="Снимок экрана 2025-09-08 в 15 33 19" src="https://github.com/user-attachments/assets/9b98ac1f-3ef8-4766-a446-77eaa397b65d" />
