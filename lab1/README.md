@@ -61,5 +61,5 @@
    ```
    mkdir -p /opt/homebrew/etc/nginx/servers
    ```
-4) пишем конфигурации для [проекта 1]() и [проекта 2]()
+4) пишем конфигурации для [проекта 1](project1/nginx.conf) и [проекта 2](project2/nginx.conf)
     
