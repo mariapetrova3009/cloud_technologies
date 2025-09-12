@@ -83,9 +83,11 @@
 
 2. У сети `cache-net` указан флаг `internal: true`. Из этой сети вообще нет выхода наружу. Redis остаётся полностью закрытым: к нему нельзя подключиться ни снаружи, ни из web.  
 
-![photo_5332520889956300283_y](https://github.com/user-attachments/assets/f7f76c54-8dc2-485b-843c-4bdfcb3bd0b1)
-![photo_5332520889956300280_y](https://github.com/user-attachments/assets/2d96b231-2310-40b2-9504-f1dee8145831)
 ![photo_5332520889956300274_y](https://github.com/user-attachments/assets/a73a3d89-63f5-4e10-a868-cd90235e374c)
+![photo_5332520889956300280_y](https://github.com/user-attachments/assets/2d96b231-2310-40b2-9504-f1dee8145831)
+![photo_5332520889956300283_y](https://github.com/user-attachments/assets/f7f76c54-8dc2-485b-843c-4bdfcb3bd0b1)
+
+
 
 **Итог:**  
 - Контейнеры поднимаются вместе, но они изолированы друг от друга.  
