@@ -4,21 +4,21 @@ version: "3.9"
 
 services:
   web:
-    image: nginx:1.25-alpine   # фиксированная версия
+    image: nginx:1.25-alpine  
     ports:
-      - "8080:80"             # публикуем только то, что реально нужно (http)
+      - "8080:80"    
     volumes:
-      - ./nginx.conf:/etc/nginx/nginx.conf:ro   # монтируем только конфиг
-      - ./html:/usr/share/nginx/html:ro         # монтируем только статику
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro 
+      - ./html:/usr/share/nginx/html:ro  
     depends_on:
       - cache
     networks:
       - app-net
 
   cache:
-    image: redis:7.2-alpine   # фиксированная версия
-    command: ["redis-server","--appendonly","yes"]  # без пароля для учебы
-    # пароль можно вынести в .env или secrets
+    image: redis:7.2-alpine  
+    command: ["redis-server","--appendonly","yes"]  
+    
     volumes:
       - redis-data:/data
     networks:
