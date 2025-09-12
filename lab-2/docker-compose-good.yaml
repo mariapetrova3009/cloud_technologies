@@ -1,5 +1,3 @@
-# Хороший docker-compose для web (nginx) + redis
-
 version: "3.9"
 
 services:
