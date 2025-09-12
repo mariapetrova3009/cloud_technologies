@@ -84,7 +84,7 @@
 2. У сети `cache-net` указан флаг `internal: true`. Из этой сети вообще нет выхода наружу. Redis остаётся полностью закрытым: к нему нельзя подключиться ни снаружи, ни из web.  
 Запускаем два сервера
 ![photo_5332520889956300274_y](https://github.com/user-attachments/assets/a73a3d89-63f5-4e10-a868-cd90235e374c)
-ВИлим, что cache не доступен из web
+Видим, что cache не доступен из web
 ![photo_5332520889956300280_y](https://github.com/user-attachments/assets/2d96b231-2310-40b2-9504-f1dee8145831)
 web не доступен из cache
 ![photo_5332520889956300283_y](https://github.com/user-attachments/assets/f7f76c54-8dc2-485b-843c-4bdfcb3bd0b1)
