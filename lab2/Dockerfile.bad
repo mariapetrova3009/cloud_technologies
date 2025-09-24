@@ -1,0 +1,5 @@
+FROM nginx:latest
+ADD . /usr/share/nginx/html
+ENV API_KEY=supersecret
+
+EXPOSE 80
