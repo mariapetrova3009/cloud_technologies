@@ -18,7 +18,7 @@
    - По  Usage Type можно понять тип потребления ресурса:  
      `%DataTransfer%` - передача данных,  
      `%TimedStorage-ByteHrs%` - хранение,  
-   - Использовала контекст полей Operation и LineItemDescription**, если они были заполнены
+   - Использовала контекст полей Operation и LineItemDescription, если они были заполнены
 
 Для каждой строки заполняла:
 
