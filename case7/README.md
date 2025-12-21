@@ -14,12 +14,12 @@
 
 ## 3. Выполнения работы
 
-### 4.1 Подготовка Docker Compose
+### 3.1 Подготовка Docker Compose
 
 Для развёртывания сервисов был написан файл `docker-compose.yml`, включающий сервисы PostgreSQL, Redis, Ollama и n8n.
 
 
-### 4.2 Запуск контейнеров
+### 3.2 Запуск контейнеров
 
 Запуск системы осуществлялся командой:
 
@@ -28,12 +28,12 @@ docker compose up -d
 ```
 <img width="869" height="185" alt="Снимок экрана 2025-12-21 в 9 30 11 AM" src="https://github.com/user-attachments/assets/3346af46-f4a1-4165-81ea-37953c4d9dff" />
 
-## 4.3 В контейнер Ollama была загружена модель llama3.2:
+### 3.3 В контейнер Ollama была загружена модель llama3.2:
 <img width="647" height="99" alt="Снимок экрана 2025-12-21 в 9 40 04 AM" src="https://github.com/user-attachments/assets/9ac26711-a467-4e8b-82fa-06b70b2a74c0" />
 <img width="584" height="44" alt="Снимок экрана 2025-12-21 в 9 40 21 AM" src="https://github.com/user-attachments/assets/7c6c4f6d-72c0-4207-bd39-ff6692f6438c" />
 
 
-## 4.4 Настройка данных Ollama и n8n
+### 3.4 Настройка данных Ollama и n8n
 В интерфейсе n8n были добавлены credentials для Ollama со следующими параметрами:
 	•	Base URL: http://ollama:11434
 
@@ -42,11 +42,11 @@ docker compose up -d
 
 <img width="497" height="577" alt="Снимок экрана 2025-12-21 в 9 35 21 AM" src="https://github.com/user-attachments/assets/4f03267b-df51-466f-869c-022fe31a230e" />
 
-## 4.5 Настройка
+### 3.5 Настройка
 Был настроен workflowб включающий в себя AI Agent, Ollama Chat Model, Redis
 <img width="608" height="479" alt="Снимок экрана 2025-12-21 в 9 36 49 AM" src="https://github.com/user-attachments/assets/1bb3406e-0f6e-4db5-bed8-cd819d633e17" />
 
-## 4.6 Проверка системы
+### 3.6 Проверка системы
 Мы сообщили информацию о себе, а в последующем сообщении агент корректно использовал ранее сохраненный контекст
 <img width="649" height="288" alt="Снимок экрана 2025-12-21 в 9 38 18 AM" src="https://github.com/user-attachments/assets/68ead111-9e63-46d1-9876-e37794aae943" />
 
