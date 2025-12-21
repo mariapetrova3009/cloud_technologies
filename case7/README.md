@@ -43,7 +43,7 @@ docker compose up -d
 <img width="497" height="577" alt="Снимок экрана 2025-12-21 в 9 35 21 AM" src="https://github.com/user-attachments/assets/4f03267b-df51-466f-869c-022fe31a230e" />
 
 ### 3.5 Настройка
-Был настроен workflowб включающий в себя AI Agent, Ollama Chat Model, Redis
+Был настроен workflow включающий в себя AI Agent, Ollama Chat Model, Redis
 <img width="608" height="479" alt="Снимок экрана 2025-12-21 в 9 36 49 AM" src="https://github.com/user-attachments/assets/1bb3406e-0f6e-4db5-bed8-cd819d633e17" />
 
 ### 3.6 Проверка системы
