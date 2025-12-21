@@ -22,6 +22,9 @@
 ### 4.2 Запуск контейнеров
 
 Запуск системы осуществлялся командой:
+<img width="869" height="185" alt="Снимок экрана 2025-12-21 в 9 30 11 AM" src="https://github.com/user-attachments/assets/1e24cf40-7515-444b-8503-33365ed5b218" />
+
 
 ```bash
 docker compose up -d
+
